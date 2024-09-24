@@ -6,20 +6,20 @@ on:
   pull_request:
 
 jobs:
-  test-stable:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-    - run: pip install codetypo
-    - uses: ./
-    - name: Check codetypo
-      run: codetypo test/test.txt || true
-    - name: Check codetypo on an unusually named file
-      run: codetypo test/test:2.txt || true
-    - name: Check codetypo on a binary file
-      run: codetypo test/test.bin || true
+ # test-stable:
+ #   runs-on: ubuntu-latest
+ #   steps:
+ #   - name: Checkout
+ #     uses: actions/checkout@v4
+ #   - uses: actions/setup-python@v5
+ #   - run: pip install codetypo
+ #   - uses: ./
+ #   - name: Check codetypo
+ #     run: codetypo test/test.txt || true
+ #   - name: Check codetypo on an unusually named file
+ #     run: codetypo test/test:2.txt || true
+ #   - name: Check codetypo on a binary file
+ #     run: codetypo test/test.bin || true
   test-master:
     runs-on: ubuntu-latest
     steps:
